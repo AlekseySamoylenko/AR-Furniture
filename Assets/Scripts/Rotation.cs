@@ -6,15 +6,13 @@ using UnityEngine.UI;
 
 public class Rotation : MonoBehaviour
 {
-    private Button Button;
-    private ProgrammManager ProgrammManagerScript;
+    [SerializeField] private Button Button;
+    [SerializeField] private Image Image;
+    [SerializeField] private ProgrammManager ProgrammManagerScript;
 
     // Start is called before the first frame update
     void Start()
     {
-        ProgrammManagerScript = FindObjectOfType<ProgrammManager>();
-
-        Button = GetComponent<Button>();
         Button.onClick.AddListener(RotationFunction);
     }
 
@@ -24,12 +22,13 @@ public class Rotation : MonoBehaviour
         if (ProgrammManagerScript.Rotation)
         {
             ProgrammManagerScript.Rotation = false;
-            GetComponent<Image>().color = Color.white;
+
+            Image.color = Color.white;
         }
         else
         {
             ProgrammManagerScript.Rotation = true;
-            GetComponent<Image>().color = Color.green;
+            Image.color = Color.green;
         }
     }
 

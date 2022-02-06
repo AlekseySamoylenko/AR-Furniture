@@ -9,7 +9,7 @@ public class ProgrammManager : MonoBehaviour
     [Header("Put your PlaneMarker here")]
     [SerializeField] private GameObject PlaneMarkerPrefab;
 
-    private ARRaycastManager ARRaycastManagerScript;
+    [SerializeField] private ARRaycastManager ARRaycastManagerScript;
 
     List<ARRaycastHit> hits = new List<ARRaycastHit>();
 
@@ -36,8 +36,6 @@ public class ProgrammManager : MonoBehaviour
 
     void Start()
     {
-        ARRaycastManagerScript = FindObjectOfType<ARRaycastManager>();
-
         PlaneMarkerPrefab.SetActive(false);
         ScrollView.SetActive(false);
     }

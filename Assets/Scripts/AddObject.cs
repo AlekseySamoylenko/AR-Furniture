@@ -18,7 +18,7 @@ public class AddObject : MonoBehaviour
     }
 
     // Update is called once per frame
-    void AddObjectFunction()
+    private void AddObjectFunction()
     {
         ProgrammManagerScript.ScrollView.SetActive(true);
     }
